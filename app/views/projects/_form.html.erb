@@ -1,0 +1,26 @@
+<%= form_for @project do |f| %>
+	<%if @project.errors.any? %>
+	<h2><%= pluralize(@project.errors.count,"error")%> this post couldn't be saved: </h2>
+		<ul><%@project.errors.full_message.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= f.label :tittle %><br>
+	<%= f.text_field :tittle %>
+
+	<br><br>
+
+	<%= f.label :description, "put a description" %><br>
+	<%= f.text_field :description %>
+
+	<br><br>
+
+	<%= f.label :category %><br>
+	<%= f.text_field :category %>
+
+	<br><br>
+
+	<%= f.submit %>
+
+<% end %>

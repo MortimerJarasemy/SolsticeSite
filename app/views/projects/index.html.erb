@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Marcos Collado - Graphic Designer/FrontEnd dev</title>
+	</head>
+	<body>
+		<header id='main_nav' class='clearfix'>
+			<a href="#">Solstice/Marcos Collado</a>
+			<nav>
+				<a href="#">Some Posts</a>
+				<a href="#">Contact</a>
+			</nav>
+		</header>
+		<h1 id=title>A title</h1>
+			<div id="post_wrap" class="skiny_wrap">
+				<% @projects.each do |project| %>
+					<div class="post">
+						<p class="date"><%= post.created_at.strftime('%A, %B %d') %> </p>
+						<hr>
+					</div>
+					<% end %>
+			</div>
+
+			<% will_paginate @posts %>
+
+	</body>
+</html>
