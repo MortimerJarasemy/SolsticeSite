@@ -1,3 +1,37 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$light:#f0f0f0;
+$semigrey:#a8a8a8;
+$dark:#424652;
+
+body{
+	text-align: center;
+}
+.skiny_wrap{
+		background-color: #ffffff;
+		width: 60%;
+		margin: 0 auto;
+		box-shadow: 3px 4px 5px -1px rgba(240,226,240,1);
+		margin-top: 1px;
+		overflow: hidden;
+		border-radius: 3px;
+}
+
+hr{
+	border: 0;
+  	border-bottom: 2px dashed $light;
+}
+
+.date{
+	font-weight: 360;
+	font-size: 0.8em;
+	color: $dark;
+}
+.theme{
+	font-weight: 200;
+	font-size: 1.0em;
+	color: $dark;
+	margin-left:80%;
+	margin-top: 12px;
+}

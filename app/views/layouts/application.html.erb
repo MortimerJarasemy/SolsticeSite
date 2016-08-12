@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head id= 'main_navigation'>
   <title>SolsticeSite</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<header id='main_nav' class='clearfix'>
+		<div class="name">		
+			<a href="#">Solstice/Marcos Collado</a>
+		</div>
+		<nav>
+			<a href="#">Some Posts</a>
+			<a href="#">Contact</a>
+		</nav>
+	</header>
 <%= yield %>
 
 </body>
