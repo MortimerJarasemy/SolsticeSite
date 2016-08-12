@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :find_post, only: [:show,:edit,:update,:destroy]
 
 		def index
 		  @posts = Post.all.order("created_at desc")
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
 		end
 
 		def show
-		  @post = Post.find_by(id: params[:id])
+		  @post = Post.find_by(params[:id])
 		  unless @post
 		    render json: {error: "The post you are looking for doesn't seem to exist"},
 		    status: 404
@@ -28,32 +29,27 @@ class PostsController < ApplicationController
 		end
 
 		def update
-		  @post = Post.find_by(id: params[:id])
-		  @post = @post.article
-		  unless @post
-		    render json: {error: "Post missing, sorry"},
-		    status: 404
-		    return
-		  end
-		  @post.update(post_params)
-		  render json: post
+			if @post.update post_params
+				redirect_to @post, notice: "we have an update working"
+			else
+				render 'edit'
+			end
 		end
 
 		def destroy
-		  post = Post.find_by(id: params[:id])
-		  unless post
-		    render json: {error: "post not found"},
-		    status: 404
-		    return
-		  end
-		  post.destroy
-		  redirect_to post_path
+		  @post.destroy
+		  redirect_to posts_path
 		end
 
 		private
 
+		def find_post
+			@post = Post.find_by(params[:id])
+		end
+
 		def post_params
 			params.require(:post).permit(:title, :content, :theme)
 		end
+
 
 end

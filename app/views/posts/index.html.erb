@@ -12,17 +12,18 @@
 				<a href="#">Contact</a>
 			</nav>
 		</header>
-		<h1 id=title>A title</h1>
+		<h1 id=title>Posts</h1>
 			<div id="post_wrap" class="skiny_wrap">
 				<% @posts.each do |post| %>
 					<div class="post">
+						<h2 class="content"><%= post.title %> </h2>
+						<p class="content"><%= post.content %> </p>
 						<p class="date"><%= post.created_at.strftime('%A, %B %d') %> </p>
 						<hr>
 					</div>
 					<% end %>
 			</div>
 
-			<% will_paginate @posts %>
 
 	</body>
 </html>

@@ -1,6 +1,6 @@
 <%= form_for @project do |f| %>
 	<%if @project.errors.any? %>
-	<h2><%= pluralize(@project.errors.count,"error")%> this post couldn't be saved: </h2>
+	<h2><%= pluralize(@project.errors.count,"error")%> this post couldn't be saved </h2>
 		<ul><%@project.errors.full_message.each do |msg| %>
 			<li><%= msg %></li>
 			<% end %>
@@ -12,7 +12,7 @@
 	<br><br>
 
 	<%= f.label :description, "put a description" %><br>
-	<%= f.text_field :description %>
+	<%= f.text_area :description %>
 
 	<br><br>
 
