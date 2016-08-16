@@ -8,11 +8,22 @@
 	</head>
 	<body>
 
-		<h1 id=title>A title</h1>
+		<h1 id=title>Projects</h1>
 			<div id="post_wrap" class="skiny_wrap">
 				<% @projects.each do |project| %>
 					<div class="post">
-						<p class="date"><%= post.created_at.strftime('%A, %B %d') %> </p>
+						<h2 class="name"><%= project.name %> </h2>
+						<p class="description"><%= project.description %> </p>
+						<% if project.has_photo? %>
+							<%= image_tag project.photo_path %>
+						  <%else%>
+							<p> aqui no hay nada zorra #<%=project.id%></p>
+						<%end%>
+
+						<p class="link"><%= project.link %> </h2>
+						<p class="category"><%= project.category %> </p>
+						<p class="date"><%= project.created_at.strftime('%A, %B %d') %> </p>
+						<hr>
 						<hr>
 					</div>
 					<% end %>

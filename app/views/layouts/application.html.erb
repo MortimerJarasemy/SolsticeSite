@@ -8,12 +8,16 @@
 </head>
 <body>
 	<header id='main_nav' class='clearfix'>
-		<div class="name">		
+		<%= image_tag("logo.png",:alt => "logoSolstice",:id => 'logo') %>
+		<div class="name">
 			<a href="#">Solstice/Marcos Collado</a>
+
 		</div>
 		<nav>
-			<a href="#">Some Posts</a>
+			<a href="#">Dev Log</a>
 			<a href="#">Contact</a>
+			<a href="#">Projects</a>
+
 		</nav>
 	</header>
 <%= yield %>

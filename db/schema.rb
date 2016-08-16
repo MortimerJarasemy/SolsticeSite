@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810134045) do
+ActiveRecord::Schema.define(version: 20160816165434) do
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160810134045) do
     t.string   "category"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "link"
+    t.string   "extension"
   end
 
 end
