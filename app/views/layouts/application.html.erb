@@ -8,19 +8,22 @@
 </head>
 <body>
 	<header id='main_nav' class='clearfix'>
-		<%= image_tag("logo.png",:alt => "logoSolstice",:id => 'logo') %>
 		<div class="name">
 			<a href="#">Solstice/Marcos Collado</a>
 
 		</div>
+		<%= image_tag("logo.png",:alt => "logoSolstice",:id => 'logo') %>
 		<nav>
-			<a href="#">Dev Log</a>
+			<%= link_to_unless_current("Projects", projects_path(@projects)) %>
+			<%= link_to_unless_current("Dev log", posts_path(@posts)) %>
+
 			<a href="#">Contact</a>
-			<a href="#">Projects</a>
 
 		</nav>
 	</header>
 <%= yield %>
+
+<footer>all rights reserved to solsticeSite.inc</footer>
 
 </body>
 </html>

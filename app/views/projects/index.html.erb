@@ -7,25 +7,58 @@
 		<title>Marcos Collado - Graphic Designer/FrontEnd dev</title>
 	</head>
 	<body>
+		<div class="selector_container">
+				<%= image_tag("web.svg",:alt => "web",:id => 'web') %>
+				<%= image_tag("logo.png",:alt => "logoSolstice",:id => 'logo') %>
+				<%= image_tag("logo.png",:alt => "logoSolstice",:id => 'logo') %>
+
+		</div>
 
 		<h1 id=title>Projects</h1>
 			<div id="post_wrap" class="skiny_wrap">
-				<% @projects.each do |project| %>
+				<% @projects.each do |project1|  %>
+				<% if project1.category ==  @choice %>
+					<div class="post">
+						<h2 class="name"><%= project1.name %> </h2>
+						<p class="description"><%= project1.description %> </p>
+
+						<% if project1.has_photo? %>
+							 <%= link_to("example_url") do %>
+									 <div class="img_container" style="background-image: url(/photo_store/<%=project1.id%>.<%=project1.extension%>)"></div>
+							 <% end %>
+						<%else%>
+								<p> theres nothing here </p>
+
+						<%end%>
+
+
+						<p class="category"><%= project1.category %> </p>
+						<p class="date"><%= project1.created_at.strftime('%A, %B %d') %> </p>
+						<hr>
+					</div>
+					<%end%>
+					<% end %>
+
+				<% @projects.each do |project|  %>
+					<% unless project.category == @choice %>
 					<div class="post">
 						<h2 class="name"><%= project.name %> </h2>
 						<p class="description"><%= project.description %> </p>
+
 						<% if project.has_photo? %>
-							<%= image_tag project.photo_path %>
-						  <%else%>
-							<p> aqui no hay nada zorra #<%=project.id%></p>
+						   <%= link_to("example_url") do %>
+						       <div class="img_container" style="background-image: url(/photo_store/<%=project.id%>.<%=project.extension%>)"></div>
+						   <% end %>
+						<%else%>
+						    <p> theres nothing here </p>
 						<%end%>
 
-						<p class="link"><%= project.link %> </h2>
+
 						<p class="category"><%= project.category %> </p>
 						<p class="date"><%= project.created_at.strftime('%A, %B %d') %> </p>
 						<hr>
-						<hr>
 					</div>
+					<%end%>
 					<% end %>
 			</div>
 

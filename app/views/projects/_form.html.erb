@@ -1,41 +1,76 @@
-<%= form_for(@project, html:{multipart:true}) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div id="post_wrap" class="form_wrap">
 
-	  <%= f.label :name %>
-	  <%= f.text_field :name %>
+	<%= form_for(@project, html:{multipart:true}) do |f| %>
+	  <% if @project.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-	  <br><br>
+	      <ul>
+	      <% @project.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	<ul>
+		<li><br>
+		  <%= f.label :name %>
+		  <%= f.text_field :name %>
+		</li>
 
-	  <%= f.label :description, "put a description" %>
-	  <%= f.text_area :description %>
+		  <br><br>
 
-	  <br><br>
+		<li class='desc'>
+		  <%= f.label :description, "Put a description" %><br>
+		  <%= f.text_area :description %>
+		</li>
 
-	  <%= f.label :link %>
-	  <%= f.text_field :link %>
+		  <br><br>
 
-	  <br><br>
+		<li>
+		  <%= f.label :link %>
+		  <%= f.text_field :link %>
+		</li>
 
-	  <%= f.label :photo %>
-	  <%= f.file_field :photo %>
 
-	  <br><br>
+		  <br><br>
+		<li>
+		  <%= f.label :photo %>
+		  <%= f.file_field :photo %>
+		</li>
 
-	  <%= f.label :category %>
-	  <%= f.text_field :category %>
+		  <br><br>
 
-	  <br><br>
+		<li>
+		  <%= f.label :photo_show1 %>
+		  <%= f.file_field :photo_show1 %>
+		</li>
 
-  <%= f.submit %>
+		  <br><br>
 
-<% end %>
+		<li>
+		  <%= f.label :photo_show2 %>
+		  <%= f.file_field :photo_show2 %>
+		</li>
+
+		  <br><br>
+
+		<li>
+		  <%= f.label :photo_show3 %>
+		  <%= f.file_field :photo_show3 %>
+		</li>
+
+		  <br><br>
+
+		<li>
+		  <%= f.label :category %>
+		  <%= f.text_field :category %>
+		</li>
+		  <br><br>
+	<hr>
+	  <%= f.submit %>
+
+	<% end %>
+	</ul>
+</div>

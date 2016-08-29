@@ -2,10 +2,9 @@ Rails.application.routes.draw do
 	resources :posts
 	resources :projects
 
+	root :to => 'projects#index'
 	get '/posts/:id(.:format)' => 'posts#show'
     get '/posts(.:format)' => 'posts#index'
-	get 'welcome/index'
-	root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
