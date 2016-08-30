@@ -127,7 +127,10 @@ ul{
 
 }
 
-
+footer{
+	img{
+		width: 24px;}
+}
 
 #main_nav{
 	display: flex;
@@ -168,6 +171,42 @@ ul{
 			margin-left:9px;
 		}
 	}
+}
+
+.flex_container{
+	margin-top: 30px;
+		display: flex;
+		flex-direction: row-reverse;;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+
+		#contact_wrap{
+			width: 56%;
+			margin-bottom: 30px;
+			p{width: 90%;
+			margin: 0 auto;
+			margin-bottom: 30px;
+			}
+		}
+
+		#contact_photo_wrap{
+			width: 10%;
+			margin-bottom: 30px;
+			margin-right: -16%;
+			#photo{
+				background-image: url("propic.png");
+				background-size:cover;
+				background-position: center;
+				filter: grayscale(100%);
+				-webkit-filter: grayscale(100%);
+
+			width: 90%;
+			height: 180px;
+			margin: 0 auto;
+			margin-top: 10px;
+			}
+		}
+
 }
 
 

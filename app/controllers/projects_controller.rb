@@ -1,16 +1,10 @@
 class ProjectsController < ApplicationController
 	before_action :find_project, only: [:show,:edit,:update,:destroy]
+	has_scope :by_category, type: :array
 
 	def index
-	  @projects = Project.all.order("created_at desc")
+	  @projects = apply_scopes(Project).all
 	  @project = Project.new
-    @choice="astrid"
-
-
-	end
-
-	def index1
-		@choice="gato"
 	end
 
 	def new

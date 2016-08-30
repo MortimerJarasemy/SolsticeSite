@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 	resources :posts
 	resources :projects
+	resources :contacts
 
 	root :to => 'projects#index'
 	get '/posts/:id(.:format)' => 'posts#show'
     get '/posts(.:format)' => 'posts#index'
+	get '/contacts(.:format)' => 'contacts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,4 +1,7 @@
 class Project < ActiveRecord::Base
+	belongs_to :category
+	scope :by_category, ->category {where(:category => category)}
+
    FOTOS = File.join Rails.root, 'public','photo_store'
 after_save :save_photo
 

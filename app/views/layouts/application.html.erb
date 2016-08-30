@@ -2,11 +2,12 @@
 <html>
 <head id= 'main_navigation'>
   <title>SolsticeSite</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	<header id='main_nav' class='clearfix'>
 		<div class="name">
 			<a href="#">Solstice/Marcos Collado</a>
@@ -16,14 +17,13 @@
 		<nav>
 			<%= link_to_unless_current("Projects", projects_path(@projects)) %>
 			<%= link_to_unless_current("Dev log", posts_path(@posts)) %>
-
-			<a href="#">Contact</a>
+			<%=  link_to "Contact", contacts_path %>
 
 		</nav>
 	</header>
 <%= yield %>
 
-<footer>all rights reserved to solsticeSite.inc</footer>
+<footer>This site uses <%= image_tag("cookie.png",:alt => "cookies",:id => 'cookie') %>'s, this site's copyright belongs to solsticeSite.inc</footer>
 
 </body>
 </html>

@@ -7,18 +7,31 @@
 	</head>
 	<body>
 
-		<h1 id=title>Dev Log</h1>
-			<div id="post_wrap" class="skiny_wrap">
-					<div class="post">
-						<p> Graphic Designer/Fullstack Web Jr </p>
-						<p>26 yr old</p>
-						<p>With a long developed passion for the world of digital design, UI/UX and typography,
-						I decided to hybrid my profile studying web developement aswell, learning HTML, CSS, JS, Ruby and
-						Ruby on Rails I was born in France, however I have visited and lived in many countries, hence I do not
-						really mind translating myself to work</p>
-					</div>
-			</div>
+		<div class="flex_container">
 
+				<div id="contact_wrap" class="skiny_wrap">
+					<h1 id=title>Who am I?</h1>
+
+						<div class="text">
+							<p> Graphic Designer/Web developer </p>
+							<p id='alignment'>My name is Marcos, and I am a UI/UX Designer,with a great passion for Typography, I am currently working on my own web font and working hard to become Front-end developer, I recently finished an intensive bootcamp at Ironhack to have the hybrid profile Designer/Programmer known as: Unicorn.
+
+							 I have been working lately using Ruby, Ruby on rails, Html, Css and Javascript.</p>
+
+							 <p>26 yr old</p>
+
+							<p>Specialities: Javascript ,html and css, Ruby on rails, Photoshop, Illustrator , Indesign, Sketch.</p>
+						</div>
+				</div>
+
+				<div id="contact_photo_wrap" class="skiny_wrap">
+					<div id="photo"> </div><br>
+					<%= link_to image_tag("ln.png",size:'24'), "https://es.linkedin.com/in/marcoscolladosegura"%>
+					<%= link_to image_tag("git.png",size:'24'), "https://github.com/MortimerJarasemy"%>
+
+				</div>
+
+		</div>
 
 	</body>
 </html>
