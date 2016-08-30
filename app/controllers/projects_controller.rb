@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 	has_scope :by_category, type: :array
 
 	def index
-	  @projects = apply_scopes(Project).all
+	  @projects = apply_scopes(Projec).all
 	  @project = Project.new
 	end
 
