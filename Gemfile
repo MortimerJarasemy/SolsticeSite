@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'dm-sqlite-adapter', '~> 1.2'
+# gem 'dm-sqlite-adapter', '~> 1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
