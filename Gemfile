@@ -1,7 +1,13 @@
 source 'https://rubygems.org'
 
-# gem 'dm-sqlite-adapter', '~> 1.2'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+
 gem 'rails', '4.2.6'
 
 # Use SCSS for stylesheets
@@ -29,7 +35,7 @@ gem 'rails-api'
 gem 'has_scope'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'pg', '~> 0.18.4'
+# gem 'pg', '~> 0.18.4'
 gem 'roda'
 gem 'sequel'
 gem 'sequel_pg', :require=>'sequel'
