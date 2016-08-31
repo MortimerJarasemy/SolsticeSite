@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "tzinfo-data"
 # gem 'will_paginate', '~> 3.0.0', :require=>'will_paginate/data_mapper'
 gem 'rails-api'
-#will filter things 
+#will filter things
 gem 'has_scope'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -43,6 +43,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry-rails'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
