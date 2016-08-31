@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+# gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -26,11 +26,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "tzinfo-data"
 # gem 'will_paginate', '~> 3.0.0', :require=>'will_paginate/data_mapper'
 gem 'rails-api'
-#will filter things 
+#will filter things
 gem 'has_scope'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'pg', '~> 0.18.4'
+gem 'roda'
+gem 'sequel'
+gem 'sequel_pg', :require=>'sequel'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

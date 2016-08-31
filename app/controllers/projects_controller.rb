@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
+	skip_before_action :verify_authenticity_token
 	before_action :find_project, only: [:show,:edit,:update,:destroy]
-	has_scope :by_category, type: :array
 
 	def index
-	  @projects = apply_scopes(Project).all
+	  @projects = Project.all
 	  @project = Project.new
 	end
 
@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-	  @project = Project.find(params[:id])
+	  @project = Project.find_by(id: params[:id])
 	  unless @project
 		render json: {error: "The project you are looking for doesn't seem to exist"},
 		status: 404
@@ -45,7 +45,8 @@ class ProjectsController < ApplicationController
 	private
 
 	def find_project
-		@project = Project.find_by(params[:id])
+		@project = Project.find_by(id: params[:id])
+
 	end
 
 	def project_params
