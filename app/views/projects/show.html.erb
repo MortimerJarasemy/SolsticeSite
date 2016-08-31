@@ -1,13 +1,27 @@
+<div id="contact_wrap" class="skiny_wrap">
+
+
 <br><br>
+
 <h2><%=@project.name%></h2>
 <br>
+<div class="focus_photo">
+
+</div>
 <%=@project.link%>
 <br><br>
+<div class="focus_photo">
+
+</div>
 <%=@project.description%>
 <br><br>
 Theme: <%=@project.category%>
 <br><br>
+<div class="focus_photo">
 
+</div>
 
 <%= link_to "Edit", edit_post_path(@project) %>
 <%= link_to "Delete", post_path(@project), method: :delete, data:{ } %>
+
+</div>

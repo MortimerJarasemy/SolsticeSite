@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 	has_scope :by_category, type: :array
 
 	def index
-	  @projects = apply_scopes(Projec).all
+	  @projects = apply_scopes(Project).all
 	  @project = Project.new
 	end
 
@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-	  @project = Project.find_by(params[:id])
+	  @project = Project.find(params[:id])
 	  unless @project
 		render json: {error: "The project you are looking for doesn't seem to exist"},
 		status: 404
